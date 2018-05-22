@@ -29,17 +29,42 @@ while True:
 		print("uncorrect")
 		break
 	if a > b:
-		if (a + b) < c or (a - b) > c:
+		if (a + b) < c or (a - b) > c or (a + b) == c:
 			print("ucorrect")
-	
+			break
 	if b > a:
-		if (b + a) < c or (b - a) > c:
+		if (b + a) < c or (b - a) > c or (b + a) == c :
 			print("ucorrect")
 			break
 	if a == b:
-		if (a + b) < c or (b + a) < c or (a - b) > c or (b - a) > c:
+		if (a + b) < c or (b + a) < c or (a - b) > c or (b - a) > c or (a + b) == c:
 			print("uncorrect")
 			break
+	if a > c:
+		if (a + c) < b or (a - c) > b or (a + c) == b:
+			print("ucorrect")
+			break
+	if c > a:
+		if (c + a) < b or (c - a) > b or (c + a) == b:
+			print("uncorrect")
+			break
+	if a == c:
+		if (a + c) < c or (c + c) < c or (a - c) > b or (c - a) > b or (c + a) == b:
+			print("uncorrect")
+			break
+	if b > c:
+		if (b + c) < a or (b - c) > a or (b + c) == a :
+			print("uncorrect")
+			break
+	if c > b:	
+		if (c + b) < a or (c - b) > a or (c + b) == a:
+			print("uncorrect")
+			break
+	if b == c:
+		if (b + c) < a or (c + b) < a or (c - b) > a or (b - c) > a or (b + c ) == a:
+			print("uncorrect")
+			break
+
 	if a == b == c:
 		print("That Equal triangle")
 		break
