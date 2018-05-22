@@ -1,4 +1,7 @@
 #utf-8. Python 3.6
+from math import cos, sin, acos, asin, radians, degrees
+
+
 while True:
 	a = float(input('Enter first side: '))
 	try:
@@ -65,6 +68,16 @@ while True:
 			print("uncorrect")
 			break
 
+	a = int(a)
+	b = int(b)
+	c = int(c)
+
+	fi_3 = acos((c ** 2 - a ** 2 - b ** 2)/(-2 * a * b))
+	fi_3 = degrees(fi_3)
+	fi_2 = acos((a ** 2 - b ** 2 - c ** 2)/(-2 * b * c))
+	fi_2 = degrees(fi_2)
+	fi_1 = 180 - fi_3 - fi_2
+
 	if a == b == c:
 		print("That Equal triangle")
 		break
@@ -73,6 +86,15 @@ while True:
 		print("that Isosceles triangle")
 		break
 		pass
+	elif fi_1 == fi_2 == fi_3:
+		print("that Acute triangle")  
+		break
+	elif fi_1 > 90 or fi_2 > 90 or fi_3 > 90:
+		print("that Obstuse triangle")
+		break
+	elif fi_1 == 90 or fi_2 == 90 or fi_3 == 90:
+		print("that Rectangular triangle")
+		break
 	else:
 		print("that Versatile triangle")
 		break
