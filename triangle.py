@@ -1,5 +1,5 @@
 #utf-8. Python 3.6
-from math import cos, sin, acos, asin, radians, degrees
+from math import acos, degrees
 
 
 while True:
