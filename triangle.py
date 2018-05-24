@@ -7,9 +7,9 @@ import unittest
 
 def triangle_ckeck(a, b, c):
 	try:
-		int(a)
-		int(b)
-		int(c)
+		float(a)
+		float(b)
+		float(c)
 	except (TypeError, ValueError):
 		print ("помилка вводу")
 		return "помилка вводу"
@@ -18,52 +18,18 @@ def triangle_ckeck(a, b, c):
 		if (a <= 0) or (b <= 0)  or (c <= 0):
 			print (" не трикутник ")
 			return " не трикутник "
-		else:	
-			if a > b:
-				if (a + b) < c or (a - b) > c or (a + b) == c:
-					print (" не трикутник ")
-					return " не трикутник "
-			elif b > a:
-				if (b + a) < c or (b - a) > c or (b + a) == c :
-					print (" не трикутник ")
-					return " не трикутник "
-			elif a == b:
-				if (a + b) < c or (b + a) < c or (a - b) > c or (b - a) > c or (a + b) == c:
-					print (" не трикутник ")
-					return " не трикутник "
-			elif a > c:
-				if (a + c) < b or (a - c) > b or (a + c) == b :
-					print (" не трикутник ")
-					return " не трикутник "
-			elif c > a:
-				if (c + a) < b or (c - a) > b or (c + a) == b :
-					print (" не трикутник ")
-					return " не трикутник "
-			elif a == c:
-				if (a + c) < c or (c + c) < c or (a - c) > b or (c - a) > b or (c + a) == b:
-					print (" не трикутник ")
-					return " не трикутник "
-			elif b > c:
-				if (b + c) < a or (b - c) > a or (b + c) == a :
-					print (" не трикутник ")
-					return " не трикутник "
-			elif c > b:	
-				if (c + b) < a or (c - b) > a or (c + b) == a :
-					print (" не трикутник ")
-					return " не трикутник "
-			elif b == c:
-				if (b + c) < a or (c + b) < a or (c - b) > a or (b - c) > a or (b + c ) == a:
-					print (" не трикутник ")
-					return " не трикутник "
-
-
+		elif (a + b) <= c or (a + c) <= b or (b + c) <= a:
+			print (" не трикутник ")
+			return " не трикутник "
+		else:
+			a = int(a)
+			b = int(b)
+			c = int(c)
 			fi_3 = round(acos((c ** 2 - a ** 2 - b ** 2)/(-2 * a * b)),2)
 			fi_3 = round(degrees(fi_3),1)
 			fi_2 = round(acos((a ** 2 - b ** 2 - c ** 2)/(-2 * b * c)),2)
 			fi_2 = round(degrees(fi_2),1)
 			fi_1 = round((180 - fi_2 - fi_3),1)
-
-
 			if (a == b and b == c and c == a):
 				print ('рівносторонній гострокутній')
 				return 'рівносторонній гострокутній'
@@ -87,9 +53,6 @@ def triangle_ckeck(a, b, c):
 				elif fi_3 > 90 or fi_2 > 90 or fi_1 > 90:
 					print ('рівнобедренний тупокутній')
 					return "рівнобедренний тупокутній"
-
-
-	cheakk (a, b, c)
 	return cheakk(a, b ,c)
 
 
