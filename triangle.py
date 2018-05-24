@@ -55,12 +55,15 @@ def triangle_ckeck(a, b, c):
 				if (b + c) < a or (c + b) < a or (c - b) > a or (b - c) > a or (b + c ) == a:
 					print (" не трикутник ")
 					return " не трикутник "
+
+
 			fi_3 = round(acos((c ** 2 - a ** 2 - b ** 2)/(-2 * a * b)),2)
 			fi_3 = round(degrees(fi_3),1)
 			fi_2 = round(acos((a ** 2 - b ** 2 - c ** 2)/(-2 * b * c)),2)
 			fi_2 = round(degrees(fi_2),1)
 			fi_1 = round((180 - fi_2 - fi_3),1)
-			print( fi_1, fi_2, fi_3)
+
+
 			if (a == b and b == c and c == a):
 				print ('рівносторонній гострокутній')
 				return 'рівносторонній гострокутній'
@@ -76,11 +79,13 @@ def triangle_ckeck(a, b, c):
 					return "різносторонній тупокутній"
 			elif (a == b or b == c or a == c):
 				if (fi_1 < 90  and fi_2 < 90 and fi_3 < 90):
+					print ('рівнобедренний гострокутній')
 					return "рівнобедренний гострокутній"
 				elif fi_1 == 90 or fi_2 == 90 or fi_3 == 90:
 					print ('рівнобедренний прямокутній')
 					return "рівнобедренний прямокутній"
 				elif fi_3 > 90 or fi_2 > 90 or fi_1 > 90:
+					print ('рівнобедренний тупокутній')
 					return "рівнобедренний тупокутній"
 
 
