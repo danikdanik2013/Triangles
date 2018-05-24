@@ -14,46 +14,59 @@ def triangle_ckeck(a, b, c):
 		print ("помилка вводу")
 		return "помилка вводу"
 
-	def cheakk(a, b, c):
+	def cheak(a, b, c):
 		if (a <= 0) or (b <= 0)  or (c <= 0):
 			print (" не трикутник ")
 			return " не трикутник "
+
 		elif (a + b) <= c or (a + c) <= b or (b + c) <= a:
 			print (" не трикутник ")
 			return " не трикутник "
+
 		else:
 			a = int(a)
 			b = int(b)
 			c = int(c)
+
 			fi_3 = round(acos((c ** 2 - a ** 2 - b ** 2)/(-2 * a * b)),2)
 			fi_3 = round(degrees(fi_3),1)
+
 			fi_2 = round(acos((a ** 2 - b ** 2 - c ** 2)/(-2 * b * c)),2)
 			fi_2 = round(degrees(fi_2),1)
+
 			fi_1 = round((180 - fi_2 - fi_3),1)
+
 			if (a == b and b == c and c == a):
 				print ('рівносторонній гострокутній')
 				return 'рівносторонній гострокутній'
+
 			elif a != b and b != c and c != a: 
 				if fi_1 < 90  and fi_2 < 90 and fi_3 < 90:
 					print ('різносторонній госторкутній')
 					return "різносторонній гострокутній"
+
 				elif fi_1 == 90  or  fi_2 == 90 or fi_3 == 90:
 					print ('різносторонній прямокутній')
 					return "різносторонній прямокутній"
+
 				else:
 					print ('різносторонній тупокутній')
 					return "різносторонній тупокутній"
+
 			elif (a == b or b == c or a == c):
 				if (fi_1 < 90  and fi_2 < 90 and fi_3 < 90):
 					print ('рівнобедренний гострокутній')
 					return "рівнобедренний гострокутній"
+
 				elif fi_1 == 90 or fi_2 == 90 or fi_3 == 90:
 					print ('рівнобедренний прямокутній')
 					return "рівнобедренний прямокутній"
+
 				elif fi_3 > 90 or fi_2 > 90 or fi_1 > 90:
 					print ('рівнобедренний тупокутній')
 					return "рівнобедренний тупокутній"
-	return cheakk(a, b ,c)
+
+	return cheak(a, b ,c)
 
 
 class TestTriangle(unittest.TestCase):
